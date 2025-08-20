@@ -146,99 +146,107 @@
                 <p class="text-center text-gray-700 font-bold text-lg mb-4">Sua opinião é importante!</p>
                 <p class="text-center text-gray-600 text-sm mb-6">O download já foi iniciado. Se desejar, aproveite para nos dar seu feedback (opcional).</p>
                 <form id="feedback-form" class="space-y-6">
-                    <!-- Pergunta 1 -->
+                    <!-- Pergunta 1 (NOVA) -->
                     <div>
-                        <label class="font-medium text-gray-800">1. Qual o seu nível de satisfação geral com o About Saúde?</label>
-                        <div class="rating-scale mt-2">
-                            <div class="rating-options">
-                                <input type="radio" id="q1-1" name="satisfacao_geral" value="1"><label for="q1-1">1</label>
-                                <input type="radio" id="q1-2" name="satisfacao_geral" value="2"><label for="q1-2">2</label>
-                                <input type="radio" id="q1-3" name="satisfacao_geral" value="3"><label for="q1-3">3</label>
-                                <input type="radio" id="q1-4" name="satisfacao_geral" value="4"><label for="q1-4">4</label>
-                                <input type="radio" id="q1-5" name="satisfacao_geral" value="5"><label for="q1-5">5</label>
-                                <input type="radio" id="q1-6" name="satisfacao_geral" value="6"><label for="q1-6">6</label>
-                                <input type="radio" id="q1-7" name="satisfacao_geral" value="7"><label for="q1-7">7</label>
-                                <input type="radio" id="q1-8" name="satisfacao_geral" value="8"><label for="q1-8">8</label>
-                                <input type="radio" id="q1-9" name="satisfacao_geral" value="9"><label for="q1-9">9</label>
-                                <input type="radio" id="q1-10" name="satisfacao_geral" value="10"><label for="q1-10">10</label>
-                            </div>
-                            <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
+                        <label class="font-medium text-gray-800">1. Você foi ao About Saúde da Ekantika Saúde?</label>
+                        <div class="mt-2 flex flex-row gap-4">
+                            <label class="flex items-center"><input type="radio" name="foi_ao_evento" value="Sim" class="mr-2">Sim</label>
+                            <label class="flex items-center"><input type="radio" name="foi_ao_evento" value="Não" class="mr-2">Não</label>
                         </div>
                     </div>
                     <!-- Pergunta 2 -->
                     <div>
-                        <label class="font-medium text-gray-800">2. Como você avaliaria a organização e logística do evento?</label>
+                        <label class="font-medium text-gray-800">2. Qual o seu nível de satisfação geral com o About Saúde?</label>
                         <div class="rating-scale mt-2">
                             <div class="rating-options">
-                                <input type="radio" id="q2-1" name="organizacao_logistica" value="1"><label for="q2-1">1</label>
-                                <input type="radio" id="q2-2" name="organizacao_logistica" value="2"><label for="q2-2">2</label>
-                                <input type="radio" id="q2-3" name="organizacao_logistica" value="3"><label for="q2-3">3</label>
-                                <input type="radio" id="q2-4" name="organizacao_logistica" value="4"><label for="q2-4">4</label>
-                                <input type="radio" id="q2-5" name="organizacao_logistica" value="5"><label for="q2-5">5</label>
-                                <input type="radio" id="q2-6" name="organizacao_logistica" value="6"><label for="q2-6">6</label>
-                                <input type="radio" id="q2-7" name="organizacao_logistica" value="7"><label for="q2-7">7</label>
-                                <input type="radio" id="q2-8" name="organizacao_logistica" value="8"><label for="q2-8">8</label>
-                                <input type="radio" id="q2-9" name="organizacao_logistica" value="9"><label for="q2-9">9</label>
-                                <input type="radio" id="q2-10" name="organizacao_logistica" value="10"><label for="q2-10">10</label>
+                                <input type="radio" id="q2-1" name="satisfacao_geral" value="1"><label for="q2-1">1</label>
+                                <input type="radio" id="q2-2" name="satisfacao_geral" value="2"><label for="q2-2">2</label>
+                                <input type="radio" id="q2-3" name="satisfacao_geral" value="3"><label for="q2-3">3</label>
+                                <input type="radio" id="q2-4" name="satisfacao_geral" value="4"><label for="q2-4">4</label>
+                                <input type="radio" id="q2-5" name="satisfacao_geral" value="5"><label for="q2-5">5</label>
+                                <input type="radio" id="q2-6" name="satisfacao_geral" value="6"><label for="q2-6">6</label>
+                                <input type="radio" id="q2-7" name="satisfacao_geral" value="7"><label for="q2-7">7</label>
+                                <input type="radio" id="q2-8" name="satisfacao_geral" value="8"><label for="q2-8">8</label>
+                                <input type="radio" id="q2-9" name="satisfacao_geral" value="9"><label for="q2-9">9</label>
+                                <input type="radio" id="q2-10" name="satisfacao_geral" value="10"><label for="q2-10">10</label>
                             </div>
                             <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
                         </div>
                     </div>
                     <!-- Pergunta 3 -->
                     <div>
-                        <label class="font-medium text-gray-800">3. O que você achou da duração do encontro?</label>
+                        <label class="font-medium text-gray-800">3. Como você avaliaria a organização e logística do evento?</label>
+                        <div class="rating-scale mt-2">
+                            <div class="rating-options">
+                                <input type="radio" id="q3-1" name="organizacao_logistica" value="1"><label for="q3-1">1</label>
+                                <input type="radio" id="q3-2" name="organizacao_logistica" value="2"><label for="q3-2">2</label>
+                                <input type="radio" id="q3-3" name="organizacao_logistica" value="3"><label for="q3-3">3</label>
+                                <input type="radio" id="q3-4" name="organizacao_logistica" value="4"><label for="q3-4">4</label>
+                                <input type="radio" id="q3-5" name="organizacao_logistica" value="5"><label for="q3-5">5</label>
+                                <input type="radio" id="q3-6" name="organizacao_logistica" value="6"><label for="q3-6">6</label>
+                                <input type="radio" id="q3-7" name="organizacao_logistica" value="7"><label for="q3-7">7</label>
+                                <input type="radio" id="q3-8" name="organizacao_logistica" value="8"><label for="q3-8">8</label>
+                                <input type="radio" id="q3-9" name="organizacao_logistica" value="9"><label for="q3-9">9</label>
+                                <input type="radio" id="q3-10" name="organizacao_logistica" value="10"><label for="q3-10">10</label>
+                            </div>
+                            <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
+                        </div>
+                    </div>
+                    <!-- Pergunta 4 -->
+                    <div>
+                        <label class="font-medium text-gray-800">4. O que você achou da duração do encontro?</label>
                         <div class="mt-2 flex flex-col sm:flex-row gap-4">
                             <label class="flex items-center"><input type="radio" name="duracao" value="Adequada" class="mr-2">Adequada</label>
                             <label class="flex items-center"><input type="radio" name="duracao" value="Longa" class="mr-2">Longa</label>
                             <label class="flex items-center"><input type="radio" name="duracao" value="Muito longa" class="mr-2">Muito longa</label>
                         </div>
                     </div>
-                    <!-- Pergunta 4 -->
+                    <!-- Pergunta 5 -->
                     <div>
-                        <label class="font-medium text-gray-800">4. Como você avalia o painel sobre eficiência operacional?</label>
+                        <label class="font-medium text-gray-800">5. Como você avalia o painel sobre eficiência operacional?</label>
                          <div class="rating-scale mt-2">
                             <div class="rating-options">
-                                <input type="radio" id="q4-1" name="painel_eficiencia" value="1"><label for="q4-1">1</label>
-                                <input type="radio" id="q4-2" name="painel_eficiencia" value="2"><label for="q4-2">2</label>
-                                <input type="radio" id="q4-3" name="painel_eficiencia" value="3"><label for="q4-3">3</label>
-                                <input type="radio" id="q4-4" name="painel_eficiencia" value="4"><label for="q4-4">4</label>
-                                <input type="radio" id="q4-5" name="painel_eficiencia" value="5"><label for="q4-5">5</label>
-                                <input type="radio" id="q4-6" name="painel_eficiencia" value="6"><label for="q4-6">6</label>
-                                <input type="radio" id="q4-7" name="painel_eficiencia" value="7"><label for="q4-7">7</label>
-                                <input type="radio" id="q4-8" name="painel_eficiencia" value="8"><label for="q4-8">8</label>
-                                <input type="radio" id="q4-9" name="painel_eficiencia" value="9"><label for="q4-9">9</label>
-                                <input type="radio" id="q4-10" name="painel_eficiencia" value="10"><label for="q4-10">10</label>
-                            </div>
-                            <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
-                        </div>
-                    </div>
-                    <!-- Pergunta 5 -->
-                     <div>
-                        <label class="font-medium text-gray-800">5. E sobre o painel de capacity planning?</label>
-                        <div class="rating-scale mt-2">
-                            <div class="rating-options">
-                                <input type="radio" id="q5-1" name="painel_capacity" value="1"><label for="q5-1">1</label>
-                                <input type="radio" id="q5-2" name="painel_capacity" value="2"><label for="q5-2">2</label>
-                                <input type="radio" id="q5-3" name="painel_capacity" value="3"><label for="q5-3">3</label>
-                                <input type="radio" id="q5-4" name="painel_capacity" value="4"><label for="q5-4">4</label>
-                                <input type="radio" id="q5-5" name="painel_capacity" value="5"><label for="q5-5">5</label>
-                                <input type="radio" id="q5-6" name="painel_capacity" value="6"><label for="q5-6">6</label>
-                                <input type="radio" id="q5-7" name="painel_capacity" value="7"><label for="q5-7">7</label>
-                                <input type="radio" id="q5-8" name="painel_capacity" value="8"><label for="q5-8">8</label>
-                                <input type="radio" id="q5-9" name="painel_capacity" value="9"><label for="q5-9">9</label>
-                                <input type="radio" id="q5-10" name="painel_capacity" value="10"><label for="q5-10">10</label>
+                                <input type="radio" id="q5-1" name="painel_eficiencia" value="1"><label for="q5-1">1</label>
+                                <input type="radio" id="q5-2" name="painel_eficiencia" value="2"><label for="q5-2">2</label>
+                                <input type="radio" id="q5-3" name="painel_eficiencia" value="3"><label for="q5-3">3</label>
+                                <input type="radio" id="q5-4" name="painel_eficiencia" value="4"><label for="q5-4">4</label>
+                                <input type="radio" id="q5-5" name="painel_eficiencia" value="5"><label for="q5-5">5</label>
+                                <input type="radio" id="q5-6" name="painel_eficiencia" value="6"><label for="q5-6">6</label>
+                                <input type="radio" id="q5-7" name="painel_eficiencia" value="7"><label for="q5-7">7</label>
+                                <input type="radio" id="q5-8" name="painel_eficiencia" value="8"><label for="q5-8">8</label>
+                                <input type="radio" id="q5-9" name="painel_eficiencia" value="9"><label for="q5-9">9</label>
+                                <input type="radio" id="q5-10" name="painel_eficiencia" value="10"><label for="q5-10">10</label>
                             </div>
                             <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
                         </div>
                     </div>
                     <!-- Pergunta 6 -->
-                    <div>
-                        <label for="avaliacao_solucao" class="font-medium text-gray-800">6. Como você avalia a solução da Ekantika Saúde?</label>
-                        <textarea id="avaliacao_solucao" name="avaliacao_solucao" rows="3" class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 focus-ring transition-all" placeholder="Insira sua resposta"></textarea>
+                     <div>
+                        <label class="font-medium text-gray-800">6. E sobre o painel de capacity planning?</label>
+                        <div class="rating-scale mt-2">
+                            <div class="rating-options">
+                                <input type="radio" id="q6-1" name="painel_capacity" value="1"><label for="q6-1">1</label>
+                                <input type="radio" id="q6-2" name="painel_capacity" value="2"><label for="q6-2">2</label>
+                                <input type="radio" id="q6-3" name="painel_capacity" value="3"><label for="q6-3">3</label>
+                                <input type="radio" id="q6-4" name="painel_capacity" value="4"><label for="q6-4">4</label>
+                                <input type="radio" id="q6-5" name="painel_capacity" value="5"><label for="q6-5">5</label>
+                                <input type="radio" id="q6-6" name="painel_capacity" value="6"><label for="q6-6">6</label>
+                                <input type="radio" id="q6-7" name="painel_capacity" value="7"><label for="q6-7">7</label>
+                                <input type="radio" id="q6-8" name="painel_capacity" value="8"><label for="q6-8">8</label>
+                                <input type="radio" id="q6-9" name="painel_capacity" value="9"><label for="q6-9">9</label>
+                                <input type="radio" id="q6-10" name="painel_capacity" value="10"><label for="q6-10">10</label>
+                            </div>
+                            <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
+                        </div>
                     </div>
                     <!-- Pergunta 7 -->
                     <div>
-                        <label for="sugestoes" class="font-medium text-gray-800">7. Deixe a sua sugestão e comentários adicionais.</label>
+                        <label for="avaliacao_solucao" class="font-medium text-gray-800">7. Como você avalia a solução da Ekantika Saúde?</label>
+                        <textarea id="avaliacao_solucao" name="avaliacao_solucao" rows="3" class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 focus-ring transition-all" placeholder="Insira sua resposta"></textarea>
+                    </div>
+                    <!-- Pergunta 8 -->
+                    <div>
+                        <label for="sugestoes" class="font-medium text-gray-800">8. Deixe a sua sugestão e comentários adicionais.</label>
                         <textarea id="sugestoes" name="sugestoes" rows="3" class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 focus-ring transition-all" placeholder="Insira sua resposta"></textarea>
                     </div>
 
@@ -318,6 +326,7 @@
             // Combina dados de registro e feedback
             const combinedData = {
                 ...registrationData,
+                foi_ao_evento: feedbackData.get('foi_ao_evento') || "",
                 satisfacao_geral: feedbackData.get('satisfacao_geral') || "",
                 organizacao_logistica: feedbackData.get('organizacao_logistica') || "",
                 duracao: feedbackData.get('duracao') || "",
@@ -355,3 +364,4 @@
     </script>
 </body>
 </html>
+
