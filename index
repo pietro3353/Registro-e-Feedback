@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado pelo seu Interesse!</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Estilos personalizados para corresponder à identidade visual */
+        :root {
+            --color-primary: #EB6856; /* Laranja */
+            --color-secondary: #2D2357; /* Azul */
+            --font-family-base: "Inter", sans-serif;
+        }
+        body {
+            font-family: var(--font-family-base);
+            background-color: #f8f9fa;
+        }
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #e55a47;
+        }
+        .btn-primary:disabled {
+            background-color: #f3a69b;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: white;
+            border: 2px solid var(--color-secondary);
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--color-secondary);
+        }
+        .text-primary {
+            color: var(--color-primary);
+        }
+        .text-secondary {
+            color: var(--color-secondary);
+        }
+        .focus-ring:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(235, 104, 86, 0.4);
+            border-color: var(--color-primary);
+        }
+        /* NOVOS ESTILOS para a escala de avaliação */
+        .rating-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .rating-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+        .rating-options {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+        }
+        @media (min-width: 640px) {
+            .rating-options {
+                grid-template-columns: repeat(10, 1fr);
+            }
+        }
+        .rating-options input[type="radio"] { display: none; }
+        .rating-options label {
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        .rating-options input[type="radio"]:checked + label {
+            background-color: var(--color-secondary);
+            color: white;
+            border-color: var(--color-secondary);
+            transform: scale(1.1);
+        }
+        .rating-options label:hover {
+            background-color: #f0f0f0;
+            border-color: var(--color-secondary);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-6">
+
+    <div class="w-full max-w-lg mx-auto bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-500">
+        <div class="p-8 sm:p-10">
+            
+            <div id="main-header" class="text-center">
+                <i class="fas fa-check-circle text-primary text-5xl mb-4"></i>
+                <h1 class="text-3xl sm:text-4xl font-bold text-secondary mb-2">Obrigado!</h1>
+                <p class="text-gray-600 text-base sm:text-lg">Agradecemos seu interesse em nossa apresentação.</p>
+            </div>
+
+            <form id="interest-form" class="mt-8 space-y-6">
+                <p class="text-center text-gray-700 font-medium">Para baixar a apresentação, por favor, preencha os campos abaixo.</p>
+                <div class="relative">
+                    <label for="name" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Nome Completo</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus-ring transition-all" placeholder="Seu nome completo">
+                </div>
+                <div class="relative">
+                     <label for="email" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">E-mail Corporativo</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus-ring transition-all" placeholder="seu.email@empresa.com">
+                </div>
+                <div class="relative">
+                    <label for="company" class="absolute -top-2 left-2 inline-block bg-white px-1 text-xs font-medium text-gray-900">Instituição</label>
+                    <input type="text" id="company" name="company" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus-ring transition-all" placeholder="Nome da sua instituição">
+                </div>
+                <div class="pt-2">
+                    <button type="submit" id="submit-button" class="w-full btn-primary font-bold py-3 px-4 rounded-lg text-lg flex items-center justify-center">
+                        <span id="button-text">Baixar Apresentação</span>
+                        <i id="button-spinner" class="fas fa-spinner fa-spin ml-2 hidden"></i>
+                    </button>
+                    <a href="https://ekantikasaude.com.br/" target="_blank" rel="noopener noreferrer" class="mt-4 w-full inline-block text-center btn-secondary font-bold py-3 px-4 rounded-lg text-lg">
+                        Conhecer mais sobre a Ekantika Saúde
+                    </a>
+                </div>
+            </form>
+            
+            <div id="feedback-section" class="hidden">
+                <p class="text-center text-gray-700 font-bold text-lg mb-4">Sua opinião é importante!</p>
+                <p class="text-center text-gray-600 text-sm mb-6">O download já foi iniciado. Se desejar, aproveite para nos dar seu feedback (opcional).</p>
+                <form id="feedback-form" class="space-y-6">
+                    <!-- Pergunta 1 -->
+                    <div>
+                        <label class="font-medium text-gray-800">1. Qual o seu nível de satisfação geral com o About Saúde?</label>
+                        <div class="rating-scale mt-2">
+                            <div class="rating-options">
+                                <input type="radio" id="q1-1" name="satisfacao_geral" value="1"><label for="q1-1">1</label>
+                                <input type="radio" id="q1-2" name="satisfacao_geral" value="2"><label for="q1-2">2</label>
+                                <input type="radio" id="q1-3" name="satisfacao_geral" value="3"><label for="q1-3">3</label>
+                                <input type="radio" id="q1-4" name="satisfacao_geral" value="4"><label for="q1-4">4</label>
+                                <input type="radio" id="q1-5" name="satisfacao_geral" value="5"><label for="q1-5">5</label>
+                                <input type="radio" id="q1-6" name="satisfacao_geral" value="6"><label for="q1-6">6</label>
+                                <input type="radio" id="q1-7" name="satisfacao_geral" value="7"><label for="q1-7">7</label>
+                                <input type="radio" id="q1-8" name="satisfacao_geral" value="8"><label for="q1-8">8</label>
+                                <input type="radio" id="q1-9" name="satisfacao_geral" value="9"><label for="q1-9">9</label>
+                                <input type="radio" id="q1-10" name="satisfacao_geral" value="10"><label for="q1-10">10</label>
+                            </div>
+                            <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
+                        </div>
+                    </div>
+                    <!-- Pergunta 2 -->
+                    <div>
+                        <label class="font-medium text-gray-800">2. Como você avaliaria a organização e logística do evento?</label>
+                        <div class="rating-scale mt-2">
+                            <div class="rating-options">
+                                <input type="radio" id="q2-1" name="organizacao_logistica" value="1"><label for="q2-1">1</label>
+                                <input type="radio" id="q2-2" name="organizacao_logistica" value="2"><label for="q2-2">2</label>
+                                <input type="radio" id="q2-3" name="organizacao_logistica" value="3"><label for="q2-3">3</label>
+                                <input type="radio" id="q2-4" name="organizacao_logistica" value="4"><label for="q2-4">4</label>
+                                <input type="radio" id="q2-5" name="organizacao_logistica" value="5"><label for="q2-5">5</label>
+                                <input type="radio" id="q2-6" name="organizacao_logistica" value="6"><label for="q2-6">6</label>
+                                <input type="radio" id="q2-7" name="organizacao_logistica" value="7"><label for="q2-7">7</label>
+                                <input type="radio" id="q2-8" name="organizacao_logistica" value="8"><label for="q2-8">8</label>
+                                <input type="radio" id="q2-9" name="organizacao_logistica" value="9"><label for="q2-9">9</label>
+                                <input type="radio" id="q2-10" name="organizacao_logistica" value="10"><label for="q2-10">10</label>
+                            </div>
+                            <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
+                        </div>
+                    </div>
+                    <!-- Pergunta 3 -->
+                    <div>
+                        <label class="font-medium text-gray-800">3. O que você achou da duração do encontro?</label>
+                        <div class="mt-2 flex flex-col sm:flex-row gap-4">
+                            <label class="flex items-center"><input type="radio" name="duracao" value="Adequada" class="mr-2">Adequada</label>
+                            <label class="flex items-center"><input type="radio" name="duracao" value="Longa" class="mr-2">Longa</label>
+                            <label class="flex items-center"><input type="radio" name="duracao" value="Muito longa" class="mr-2">Muito longa</label>
+                        </div>
+                    </div>
+                    <!-- Pergunta 4 -->
+                    <div>
+                        <label class="font-medium text-gray-800">4. Como você avalia o painel sobre eficiência operacional?</label>
+                         <div class="rating-scale mt-2">
+                            <div class="rating-options">
+                                <input type="radio" id="q4-1" name="painel_eficiencia" value="1"><label for="q4-1">1</label>
+                                <input type="radio" id="q4-2" name="painel_eficiencia" value="2"><label for="q4-2">2</label>
+                                <input type="radio" id="q4-3" name="painel_eficiencia" value="3"><label for="q4-3">3</label>
+                                <input type="radio" id="q4-4" name="painel_eficiencia" value="4"><label for="q4-4">4</label>
+                                <input type="radio" id="q4-5" name="painel_eficiencia" value="5"><label for="q4-5">5</label>
+                                <input type="radio" id="q4-6" name="painel_eficiencia" value="6"><label for="q4-6">6</label>
+                                <input type="radio" id="q4-7" name="painel_eficiencia" value="7"><label for="q4-7">7</label>
+                                <input type="radio" id="q4-8" name="painel_eficiencia" value="8"><label for="q4-8">8</label>
+                                <input type="radio" id="q4-9" name="painel_eficiencia" value="9"><label for="q4-9">9</label>
+                                <input type="radio" id="q4-10" name="painel_eficiencia" value="10"><label for="q4-10">10</label>
+                            </div>
+                            <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
+                        </div>
+                    </div>
+                    <!-- Pergunta 5 -->
+                     <div>
+                        <label class="font-medium text-gray-800">5. E sobre o painel de capacity planning?</label>
+                        <div class="rating-scale mt-2">
+                            <div class="rating-options">
+                                <input type="radio" id="q5-1" name="painel_capacity" value="1"><label for="q5-1">1</label>
+                                <input type="radio" id="q5-2" name="painel_capacity" value="2"><label for="q5-2">2</label>
+                                <input type="radio" id="q5-3" name="painel_capacity" value="3"><label for="q5-3">3</label>
+                                <input type="radio" id="q5-4" name="painel_capacity" value="4"><label for="q5-4">4</label>
+                                <input type="radio" id="q5-5" name="painel_capacity" value="5"><label for="q5-5">5</label>
+                                <input type="radio" id="q5-6" name="painel_capacity" value="6"><label for="q5-6">6</label>
+                                <input type="radio" id="q5-7" name="painel_capacity" value="7"><label for="q5-7">7</label>
+                                <input type="radio" id="q5-8" name="painel_capacity" value="8"><label for="q5-8">8</label>
+                                <input type="radio" id="q5-9" name="painel_capacity" value="9"><label for="q5-9">9</label>
+                                <input type="radio" id="q5-10" name="painel_capacity" value="10"><label for="q5-10">10</label>
+                            </div>
+                            <div class="rating-labels"><span>Insatisfeito</span><span>Satisfeito</span></div>
+                        </div>
+                    </div>
+                    <!-- Pergunta 6 -->
+                    <div>
+                        <label for="avaliacao_solucao" class="font-medium text-gray-800">6. Como você avalia a solução da Ekantika Saúde?</label>
+                        <textarea id="avaliacao_solucao" name="avaliacao_solucao" rows="3" class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 focus-ring transition-all" placeholder="Insira sua resposta"></textarea>
+                    </div>
+                    <!-- Pergunta 7 -->
+                    <div>
+                        <label for="sugestoes" class="font-medium text-gray-800">7. Deixe a sua sugestão e comentários adicionais.</label>
+                        <textarea id="sugestoes" name="sugestoes" rows="3" class="mt-2 w-full px-4 py-3 rounded-lg border border-gray-300 focus-ring transition-all" placeholder="Insira sua resposta"></textarea>
+                    </div>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-4">
+                        <button type="submit" id="feedback-submit-button" class="w-full btn-primary font-bold py-3 px-4 rounded-lg text-lg">Enviar Feedback</button>
+                        <button type="button" id="skip-feedback-button" class="w-full text-center text-gray-600 font-medium py-3 px-4 rounded-lg hover:bg-gray-100">Pular</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="final-message" class="mt-8 text-center text-green-600 font-semibold text-lg hidden"></div>
+            <div id="error-message" class="mt-4 text-center text-red-600 font-medium hidden"></div>
+        </div>
+    </div>
+
+    <script>
+        const interestForm = document.getElementById('interest-form');
+        const feedbackSection = document.getElementById('feedback-section');
+        const feedbackForm = document.getElementById('feedback-form');
+        const mainHeader = document.getElementById('main-header');
+        const submitButton = document.getElementById('submit-button');
+        const finalMessage = document.getElementById('final-message');
+        const errorMessage = document.getElementById('error-message');
+        const skipFeedbackButton = document.getElementById('skip-feedback-button');
+
+        let registrationData = {};
+
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwENDVRUQRZeDqRt7NrbnRiWh5RhSq5z_xomxNzSvcfUqcxcgtVJuWxJSpAkbYzofi-Pg/exec';
+
+        // Passo 1: Usuário preenche o registro
+        interestForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Salva os dados de registro
+            const formData = new FormData(interestForm);
+            registrationData = {
+                timestamp: new Date().toLocaleString('pt-BR'),
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company'),
+            };
+
+            // Inicia o download
+            const link = document.createElement('a');
+            link.href = 'https://drive.google.com/uc?export=download&id=1L-VloGQGcziN0Rmt0AWZrcMjxwrECBl7'; 
+            link.download = 'Apresentação_Ekantika_Saúde.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Transição para o formulário de feedback
+            interestForm.classList.add('hidden');
+            mainHeader.classList.add('hidden');
+            feedbackSection.classList.remove('hidden');
+        });
+
+        // Passo 2: Usuário envia o feedback (ou pula)
+        feedbackForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const feedbackData = new FormData(feedbackForm);
+            sendCombinedData(feedbackData);
+        });
+
+        skipFeedbackButton.addEventListener('click', () => {
+            // Cria um FormData vazio se pular
+            const emptyFeedbackData = new FormData();
+            sendCombinedData(emptyFeedbackData);
+        });
+
+        // Passo 3: Função única para enviar TODOS os dados
+        async function sendCombinedData(feedbackData) {
+            const feedbackSubmitButton = document.getElementById('feedback-submit-button');
+            feedbackSubmitButton.disabled = true;
+            feedbackSubmitButton.textContent = 'Enviando...';
+            skipFeedbackButton.disabled = true;
+
+            // Combina dados de registro e feedback
+            const combinedData = {
+                ...registrationData,
+                satisfacao_geral: feedbackData.get('satisfacao_geral') || "",
+                organizacao_logistica: feedbackData.get('organizacao_logistica') || "",
+                duracao: feedbackData.get('duracao') || "",
+                painel_eficiencia: feedbackData.get('painel_eficiencia') || "",
+                painel_capacity: feedbackData.get('painel_capacity') || "",
+                avaliacao_solucao: feedbackData.get('avaliacao_solucao') || "",
+                sugestoes: feedbackData.get('sugestoes') || "",
+            };
+
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST', mode: 'cors', cache: 'no-cache',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(combinedData),
+                });
+                const result = await response.json();
+
+                if (result.result === 'success') {
+                    showFinalMessage('Obrigado pela sua participação!');
+                } else {
+                    throw new Error(result.message || 'Ocorreu um erro.');
+                }
+            } catch (error) {
+                console.error('Erro ao Enviar Dados:', error);
+                showFinalMessage('Obrigado! Seu registro foi salvo, mas não foi possível enviar o feedback.');
+            }
+        }
+
+        function showFinalMessage(message) {
+            feedbackSection.classList.add('hidden');
+            mainHeader.classList.remove('hidden');
+            finalMessage.textContent = message;
+            finalMessage.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
